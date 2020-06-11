@@ -15,9 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
  * ******************************************
  */
 class MainActivity : BaseMvpActivity<MainPresenter>() {
-
     override var layoutId: Int = R.layout.activity_main
-
     override fun initView(savedInstanceState: Bundle?) {
         //获取网路的点击事件
         tvMainGet.setOnClickListener {
@@ -34,13 +32,10 @@ class MainActivity : BaseMvpActivity<MainPresenter>() {
             Toast.makeText(this, "保存", Toast.LENGTH_SHORT).show()
         }
     }
-
     /**
      * 获取到数据的绑定方法
      */
     fun bindContent(personTravelNodes: PersonTravelNodes) {
         tvContent.text = personTravelNodes.toString()
     }
-
-
 }

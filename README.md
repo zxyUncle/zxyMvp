@@ -21,8 +21,8 @@ Step 1
 -----
 下载项目找到将项目的zxymvp跟zxyhttp导入你自己的项目
 
-效果图：    
-![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/aaa.png)    
-
-![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/mvp.gif)
+效果图：
+![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/aaa.png)
+![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/bbb.png)
+![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/mvp.gif)     
 
