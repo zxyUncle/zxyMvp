@@ -27,10 +27,16 @@ class MainActivity : BaseMvpActivity<MainPresenter>() {
         llTitleLeft.setOnClickListener {
             Toast.makeText(this, "返回", Toast.LENGTH_SHORT).show()
         }
+        llTitleRightIv1.setOnClickListener {
+            Toast.makeText(this, "分享", Toast.LENGTH_SHORT).show()
+        }
+        llTitleRightTv.setOnClickListener {
+            Toast.makeText(this, "保存", Toast.LENGTH_SHORT).show()
+        }
     }
 
     /**
-     *   获取到数据的绑定方法
+     * 获取到数据的绑定方法
      */
     fun bindContent(personTravelNodes: PersonTravelNodes) {
         tvContent.text = personTravelNodes.toString()
