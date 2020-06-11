@@ -1,5 +1,6 @@
 # Kotlin+MVP+Okhttp+Retrifit+Rxjava
 1、只想使用MVP
+-----
 [![](https://jitpack.io/v/zxyUncle/zxyMvp.svg)](https://jitpack.io/#zxyUncle/zxyMvp)
 Gradle
 -----
@@ -17,6 +18,7 @@ Step 1
 	}
 
 2、MVP+网路访问封装
+-----
 下载项目找到将项目的zxymvp跟zxyhttp导入你自己的项目
 
 效果图：
