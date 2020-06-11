@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">ZXYHttp</string>
+    <string name="refresh_header_loading">加载中...</string>
+    <string name="refresh_header_nonetword">网路请求失败，请检查你的网路设置</string>
+    <string name="include_network_no">无网路</string>
+    <string name="include_empty">无内容</string>
+</resources>
