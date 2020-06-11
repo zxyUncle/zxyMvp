@@ -24,5 +24,5 @@ Step 1
 效果图：
 ![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/aaa.png)
 ![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/bbb.png)
-![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/mvp.gif)     
+![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/mvp.gif)
 
