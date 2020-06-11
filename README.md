@@ -24,5 +24,3 @@ Step 1
 
 [![](https://github.com/zxyUncle/zxyMvp/blob/master/picture/mvp.gif)](https://github.com/zxyUncle/zxyMvp/blob/master/picture/mvp.gif)
 
-[![](https://camo.githubusercontent.com/15675678891dead0d516b6ee7a57ed12101ce69a/687474703a2f2f7777772e62616964752e636f6d2f696d672f62646c6f676f2e676966)](https://camo.githubusercontent.com/15675678891dead0d516b6ee7a57ed12101ce69a/687474703a2f2f7777772e62616964752e636f6d2f696d672f62646c6f676f2e676966) 
-
