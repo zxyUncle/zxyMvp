@@ -22,6 +22,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    //构建变种版本
+//    flavorDimensions "gittest"
+//    productFlavors{
+//        staging{
+//            buildConfigField("String", "hostUrl", '"https://"')
+//            dimension "gittest"
+//        }
+//        official{
+//            buildConfigField("String", "hostUrl", '"https://"')
+//            dimension "gittest"
+//        }
+//    }
 }
 
 dependencies {

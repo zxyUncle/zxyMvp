@@ -31,6 +31,7 @@ class MainActivity : BaseMvpActivity<MainPresenter>() {
         llTitleRightTv.setOnClickListener {
             Toast.makeText(this, "保存", Toast.LENGTH_SHORT).show()
         }
+
     }
     /**
      * 获取到数据的绑定方法
