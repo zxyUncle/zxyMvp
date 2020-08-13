@@ -10,9 +10,19 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
     <!--自定义万能布局Dialog 背景透明-->
-    <style name="MyDilog" parent="Theme.AppCompat.Dialog">
+    <style name="YN_MyDilog" parent="Theme.AppCompat.Dialog">
         <!--设置window的窗口背景为透明-->
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
+    <style name="YN_AlertDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/yn_dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/yn_dialog_exit_anim</item>
+    </style>
+
+
+    <style name="YN_popwin_anim_style_bottom" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/yn_pop_enter_anim_bottom</item>
+        <item name="android:windowExitAnimation">@anim/yn_pop_exit_anim_bottom</item>
+    </style>
 </resources>

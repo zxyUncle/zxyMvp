@@ -2,6 +2,7 @@ package com.zxy.zxymvp.activity
 
 import android.os.Bundle
 import android.widget.Toast
+import com.zxy.zxyhttp.entity.BaseBean
 import com.zxy.zxyhttp.entity.PersonTravelNodes
 import com.zxy.zxymvp.R
 import com.zxy.zxymvp.mvp.impl.BaseMvpActivity
@@ -36,7 +37,7 @@ class MainActivity : BaseMvpActivity<MainPresenter>() {
     /**
      * 获取到数据的绑定方法
      */
-    fun bindContent(personTravelNodes: PersonTravelNodes) {
-        tvContent.text = personTravelNodes.toString()
+    fun bindContent(bean: BaseBean) {
+        tvContent.text = bean.toString()
     }
 }

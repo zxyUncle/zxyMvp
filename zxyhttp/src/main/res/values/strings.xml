@@ -5,4 +5,25 @@
     <string name="refresh_header_nonetword">网路请求失败，请检查你的网路设置</string>
     <string name="include_network_no">无网路</string>
     <string name="include_empty">无内容</string>
+    <string name="noPermission">请联系开发人员，添加你的权限</string>
+
+    <string name="tv_captcha_text">验证码</string>
+    <string name="et_captcha_placeholder">请输入验证码</string>
+    <string name="title_ok">确定</string>
+
+<!--    RackView-->
+    <string name="has_no_authority">您没有该权限</string>
+    <string name="cold_temperatrue">低温传感器</string>
+    <string name="hot_temperatrue">高温传感器</string>
+    <string name="error_temperatrue">未知传感器</string>
+    <string name="temperatrue_error">温度异常</string>
+    <string name="temperatrue_common">温度正常</string>
+
+    <string name="yn_noclick">未设置点击事件</string>
+    <string name="yn_loading">加载中...</string>
+    <string name="yn_init_error">YN未初始化或没有访问权限</string>
+    <string name="yn_extends">当前Activity必须继承RxFragmentActivity</string>
+
+
+
 </resources>

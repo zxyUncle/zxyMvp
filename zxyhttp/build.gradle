@@ -2,27 +2,17 @@ apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
-apply plugin: 'kotlin-kapt'
-
 apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
-
-
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        //        ARouter
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
     }
 
     buildTypes {
@@ -31,37 +21,35 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    androidExtensions {
+        experimental = true
+    }
+    //将源码打包  为了保证引入的aar  包可以查看源码
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.srcDirs
+    }
+    //包含文档和源码的aar
+    artifacts {
+        archives androidSourcesJar
+    }
 
-}
-kapt {
-    generateStubs = true
 }
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    //rxjava
-    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    api 'io.reactivex.rxjava2:rxjava:2.2.12'
-    api 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.1.1'
-    api 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
-    api 'com.squareup.retrofit2:retrofit:2.0.2'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
+    implementation 'com.alexvasilkov:gesture-views:2.5.2'
+    implementation 'com.kaopiz:kprogresshud:1.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.0' // 必要rxjava2依赖
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1' // 必要rxandrroid依赖，切线程时需要用到
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0' // 必要retrofit依赖
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0' // 必要依赖，和Rxjava结合必须用到，下面会提到
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0' // 必要依赖，解析json字符所用
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
 
-//    api "com.blankj:rxbus:1.1"
-    //Gson库
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    //takephoto
-    implementation 'com.jph.takephoto:takephoto_library:4.0.3'
-    //design
-    implementation 'com.android.support:design:29.0.0'
-    //多状态布局-https://github.com/Kennyc1012/MultiStateView
-    api  'com.github.Kennyc1012:MultiStateView:2.1'
-    //ZXY 路由
-    implementation 'com.alibaba:arouter-api:1.5.0'
-    kapt 'com.alibaba:arouter-compiler:1.2.2'
 }

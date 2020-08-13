@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 功能： -->
+<resources>
+    <color name="color_333333">#333333</color>
+    <color name="color_ffffff">#ffffff</color>
+
+    <color name="colorPrimary">#6785C1</color>
+    <color name="colorPrimaryDark">#6785C1</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorGreen">#6785C1</color>
+    <!--<color name="colorGreen">#5EBF8B</color>-->
+    <color name="colorBlue">#6785C1</color>
+    <color name="color_blue_default">#ff6785c1</color>
+    <color name="colorDarkGreenPressed">#8785C1</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey">#F4F6F8</color>
+    <color name="colorGrey2">#FFE8E8E8</color>
+    <color name="colorGrey3">#EAEAEA</color>
+    <color name="colorDarkBlack">#333333</color>
+    <color name="tab_gb">#FFFFFF</color>
+    <color name="tab_normal_color">#999999</color>
+    <color name="tab_selected_color">#6785C1</color>
+    <color name="colorRed">#E94F4F</color>
+    <color name="colorF1A139">#F1A139</color>
+    <color name="colorEB5D5D">#EB5D5D</color>
+    <!--old-->
+    <color name="colorTitleBar">#FFFFFF</color>
+
+    <color name="colorDefault">#E67E22</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorYellow">#F1C40F</color>
+    <color name="colorCyan">#34495E</color>
+    <color name="colorDodgerBlue">#1e90ff</color>
+    <color name="colorDodgerBlue_pressed">#5588AA</color>
+    <color name="colorPurple">#9B59B6</color>
+    <color name="colorDarkGrey">#999</color>
+    <color name="colorDarkDarkGrey">#999</color>
+    <color name="colorLightGrey">#eee</color>
+    <color name="colorTransparentGrey">#2000</color>
+    <color name="colorOrange">#E67E22</color>
+    <color name="colorLightOrange">#FBB039</color>
+    <color name="colorCherryRed">#D24161</color>
+    <color name="colorLightBlack">#999</color>
+    <color name="colorBlack">#666</color>
+    <color name="divider">#ffd2d2d2</color>
+    <color name="colorE94F4F">#E94F4F</color>
+    <color name="color_bg">#f0f2f5</color>
+    <color name="c_f4">#f4f4f4</color>
+    <color name="c_c2">#c2c2c2</color>
+    <color name="c_333">#333333</color>
+    <color name="c_666">#666666</color>
+    <color name="c_999">#999999</color>
+    <color name="c_10B85B">#10B85B</color>
+    <color name="c_a0ff">#f0ffffff</color>
+    <color name="c_f52828">#F52828</color>
+    <color name="c_009450">#009450</color>
+    <color name="c_f6f4f5">#f6f4f5</color>
+
+
+    <color name="c_ffcb82">#FFCB82</color>
+    <color name="c_f96501">#F96501</color>
+
+</resources>

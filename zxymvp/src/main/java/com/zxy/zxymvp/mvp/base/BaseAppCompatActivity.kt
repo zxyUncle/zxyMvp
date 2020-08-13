@@ -1,14 +1,14 @@
 package com.zxy.zxymvp.mvp.base
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import com.trello.rxlifecycle2.components.support.RxFragmentActivity
+import com.zxy.zxymultilingual.MultiLanguageUtil
 import com.zxy.zxymvp.R
 import kotlinx.android.synthetic.main.titlebar.*
-import kotlinx.android.synthetic.main.titlebar.view.*
 
 /**
  * Created by zxy on 2020/6/9 0009 18:00
@@ -16,14 +16,16 @@ import kotlinx.android.synthetic.main.titlebar.view.*
  * *
  * ******************************************
  */
-open abstract class BaseAppCompatActivity : AppCompatActivity() {
+open abstract class BaseAppCompatActivity : RxFragmentActivity() {
     abstract var layoutId: Int //初始化布局
     abstract fun initView(savedInstanceState: Bundle?)//初始化数据
 
-    val llTitleLeft: LinearLayout by lazy {//返回按钮
+    val llTitleLeft: LinearLayout by lazy {
+        //返回按钮
         findViewById<LinearLayout>(R.id.llTitleLeft)
     }
-    val tvTitle: TextView by lazy {//标题栏
+    val tvTitle: TextView by lazy {
+        //标题栏
         findViewById<TextView>(R.id.tvTitle)
     }
     val llTitleRightIv1: LinearLayout by lazy {
@@ -43,9 +45,18 @@ open abstract class BaseAppCompatActivity : AppCompatActivity() {
         initView(savedInstanceState)//初始化数据
     }
 
+    /**
+     * 使用自己设置的语言--核心
+     * @param newBase
+     */
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(MultiLanguageUtil.attachBaseContext(newBase))
+    }
+
     override fun onStart() {
         super.onStart()
-        tvTitle.isSelected = tvTitle.text.length > 9  //标题开启关闭走马灯
+        if (hasToolBar())
+            tvTitle.isSelected = tvTitle.text.length > 9  //标题开启关闭走马灯
     }
 
 
@@ -59,7 +70,10 @@ open abstract class BaseAppCompatActivity : AppCompatActivity() {
         }
     }
 
-    private fun hasToolBar() = true
+    /**
+     * 是否使用base的toolbar
+     */
+    protected open fun hasToolBar() = true
 
     override fun onDestroy() {
         super.onDestroy()

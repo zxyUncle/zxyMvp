@@ -1,4 +1,2 @@
-include ':zxymvp'
-include ':zxyhttp'
-include ':app'
+include ':app', ':zxyhttp', ':zxymultilingual', ':zxymvp'
 rootProject.name = "zxyMvp"

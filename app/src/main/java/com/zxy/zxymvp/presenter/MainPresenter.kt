@@ -1,9 +1,7 @@
 package com.zxy.zxymvp.presenter
 
-import com.kennyc.view.MultiStateView
-import com.zxy.httpnet.utils.OkHttpManager
-import com.zxy.zxyhttp.entity.PersonTravelNodes
-import com.zxy.zxyhttp.entity.UserBean
+import com.cloudpick.yunnasdk.OkHttpManager
+import com.zxy.zxyhttp.entity.BaseBean
 import com.zxy.zxymvp.activity.MainActivity
 import com.zxy.zxymvp.mvp.base.BasePresenter
 
@@ -15,18 +13,22 @@ import com.zxy.zxymvp.mvp.base.BasePresenter
  */
 class MainPresenter : BasePresenter<MainActivity>() {
     fun login() {
-        val login = OkHttpManager.instance.apiService(view).getPersonTravelNodes("特色出游", "1", "20")
+        val login = OkHttpManager.instance.apiService(view).sendBindContent("123")
         OkHttpManager.instance.CallObserDialog(login,
-                object : OkHttpManager.HttpClickLenerlist<PersonTravelNodes> {
-                    override fun onFail(obj: PersonTravelNodes) {
+            object : OkHttpManager.HttpClickLenerlist<BaseBean> {
+                override fun onNoNetwork() {
 
-                    }
+                }
 
-                    override fun onSucc(obj: PersonTravelNodes) { // 成功
-                        view.bindContent(obj)
-                    }
+                override fun onFail(obj: BaseBean) {
 
-                })
+                }
+
+                override fun onSucc(obj: BaseBean) { // 成功
+                    view.bindContent(obj)
+                }
+
+            })
 
     }
 }
