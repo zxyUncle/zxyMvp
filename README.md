@@ -23,7 +23,9 @@ Module:
     implementation 'com.github.zxyUncle.zxyMvp:zxyhttp:Tag'    
  3. zxymultilingual:多语言module            
 implementation 'com.github.zxyUncle.zxyMvp:zxymultilingual:Tag'
-                      
+             
+3、最好下载项目，将module引入其他的项目     
+-----   
 效果图：           
 -----   
 ![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/aaa.png)     
