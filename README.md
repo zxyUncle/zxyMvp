@@ -24,7 +24,9 @@ Module:
  3. zxymultilingual:多语言module            
 implementation 'com.github.zxyUncle.zxyMvp:zxymultilingual:Tag'
              
-3、最好下载项目，将module引入其他的项目     
+3、最好下载项目，将module引入其他的项目  
+      
+注：后期换成Kotlin协程          
 -----   
 效果图：           
 -----   
