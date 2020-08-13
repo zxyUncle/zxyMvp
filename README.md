@@ -1,5 +1,5 @@
 # Kotlin+MVP+Okhttp+Retrifit+Rxjava+lifecy+多语言
-1、加入      
+1、快速加入      
 -----
 [![](https://jitpack.io/v/zxyUncle/zxyMvp.svg)](https://jitpack.io/#zxyUncle/zxyMvp)
 Gradle
@@ -14,8 +14,6 @@ Step 1
 		}
 	}
       
-2、可以只使用其中的一个或者多个            
------   
 Module:                 
  1. zxyhttp:网路module           
     implementation 'com.github.zxyUncle:zxyMvp:Tag'  
@@ -24,9 +22,9 @@ Module:
  3. zxymultilingual:多语言module            
 implementation 'com.github.zxyUncle.zxyMvp:zxymultilingual:Tag'
              
-3、最好下载项目，将module引入其他的项目  
-      
-注：后期换成Kotlin协程          
+2、Module加入：最好下载项目，将module引入其他的项目  
+-----
+注：后期换成Kotlin协程，线程还是不好调度      
 -----   
 效果图：           
 -----   
