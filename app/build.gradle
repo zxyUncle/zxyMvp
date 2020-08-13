@@ -24,17 +24,23 @@ android {
     }
 
     //构建变种版本
-//    flavorDimensions "gittest"
-//    productFlavors{
-//        staging{
-//            buildConfigField("String", "hostUrl", '"https://"')
-//            dimension "gittest"
-//        }
-//        official{
-//            buildConfigField("String", "hostUrl", '"https://"')
-//            dimension "gittest"
-//        }
-//    }
+     flavorDimensions "zxymvp"
+    productFlavors {
+        n1_normal {
+            buildConfigField("String", "hostUrl", '"http://10.10.10.223/"')
+            applicationId "com.zxy.zxymvp"
+            versionName "1.0.0"
+            versionCode 1
+            dimension "zxymvp"
+        }
+        n2_japan {
+            buildConfigField("String", "hostUrl", '"http://10.10.10.223/"')
+            applicationId "com.zxy.zxymvp.jp"
+            versionName "1.0.0"
+            versionCode 1
+            dimension "zxymvp"
+        }
+    }
 }
 
 dependencies {
