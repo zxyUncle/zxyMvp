@@ -1,4 +1,4 @@
-# Kotlin+MVP+Okhttp+Retrifit+Rxjava
+# Kotlin+MVP+Okhttp+Retrifit+Rxjava+lifecy+多语言
 1、只想使用MVP
 -----
 [![](https://jitpack.io/v/zxyUncle/zxyMvp.svg)](https://jitpack.io/#zxyUncle/zxyMvp)
@@ -19,11 +19,10 @@ Step 1
 
 2、MVP+网路访问封装
 -----
-下载项目找到将项目的zxymvp跟zxyhttp导入你自己的项目      
-
-zxyhttp:网路module
-zxymvp:mvp框架module
-zxymultilingual:多语言module
+Module:
+1、zxyhttp:网路module
+2、zxymvp:mvp框架module
+3、zxymultilingual:多语言module
 
 效果图：
 ![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/aaa.png)
