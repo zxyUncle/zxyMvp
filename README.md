@@ -14,22 +14,22 @@ Step 1
 		}
 	}
       
-2、可以只使用其中的一个或者多个      
+2、可以只使用其中的一个或者多个            
 -----   
-Module:
+Module:                 
  1. zxyhttp:网路module           
     implementation 'com.github.zxyUncle:zxyMvp:Tag'  
- 2. zxymvp:mvp框架module
+ 2. zxymvp:mvp框架module           
     implementation 'com.github.zxyUncle.zxyMvp:zxyhttp:Tag'    
- 3. zxymultilingual:多语言module
+ 3. zxymultilingual:多语言module            
 implementation 'com.github.zxyUncle.zxyMvp:zxymultilingual:Tag'
-                
-效果图： 
+                      
+效果图：           
 -----   
 ![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/aaa.png)     
 -----   
 ![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/bbb.png)     
 -----   
 ![Image text](https://github.com/zxyUncle/zxyMvp/blob/master/picture/mvp.gif)   
------   
+-----    
 
