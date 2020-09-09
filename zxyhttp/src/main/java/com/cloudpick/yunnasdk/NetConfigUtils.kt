@@ -12,8 +12,8 @@ import android.content.Intent
 class NetConfigUtils {
     companion object {
         //网路请求的配置
-        var YN_HOSTURL = "http://10.10.10.130/"//服务器地址
-        var YN_IMGURL = "http://img.yunatop.com/"//图片地址
+        val YN_HOSTURL = "http://10.10.10.130/"//服务器地址
+        val YN_IMGURL = "http://img.yunatop.com/"//图片地址
         val YN_STATUS = "code"         //成功失败的code或者status，根据服务器不同，变为不同
         val YN_MSG = "message"             //失败提示，根据服务器不同，变为不同
         val YN_TAG = "yunna"         //网路请求数据显示的Logcat 日志过滤TAG

@@ -1,6 +1,8 @@
 package com.cloudpick.yunnasdk
 
 import android.content.Context
+import com.cloudpick.yunnasdk.tools.FilesUtils
+import com.cloudpick.yunnasdk.utils.AppUtils
 
 /**
  * Created by zxy on 2020/8/3 10:32
@@ -10,15 +12,17 @@ import android.content.Context
  */
 class YN {
     companion object {
-        var mContext: Context? = null
+        var mContext: Context?=null
         val isAllow: Boolean by lazy {
-            true
+            if (mContext==null){
+                false
+            }else{
+                FilesUtils.initAssets(mContext,AppUtils.getPackageName(mContext))
+            }
         }
 
-        fun init(mContext: Context?, hostUrl: String) {
+        fun init(mContext: Context?) {
             this.mContext = mContext
-            BuildConfig.BUILD_TYPE
-            NetConfigUtils.YN_HOSTURL = hostUrl
         }
     }
 }

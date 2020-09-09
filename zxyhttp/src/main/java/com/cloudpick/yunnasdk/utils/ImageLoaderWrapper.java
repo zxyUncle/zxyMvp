@@ -16,24 +16,48 @@ import com.cloudpick.yunnasdk.R;
  */
 
 public class ImageLoaderWrapper {
-    public static String getImgWithSuffix() {
-        return NetConfigUtils.Companion.getYN_IMGURL() + "/%s.jpg";
-    }
 
-    public static void displayImageByGoodsId(Context context, ImageView iv, String goodsId) {
-        if (!isValidContextForGlide(context)) {
-            return;
-        }
-        String url = String.format(getImgWithSuffix(), goodsId);
+    public static void displayImage(Context context, ImageView iv, String url) {
         RequestOptions options = RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.yn_image_placehold)
-                .error(R.drawable.yn_image_placehold);
+                .placeholder(R.drawable.image_placehold)
+                .error(R.drawable.image_placehold);
         Glide.with(context)
                 .load(url)
                 .apply(options)
                 .into(iv);
 
     }
+    public static String getImgWithSuffix() {
+        return NetConfigUtils.Companion.getYN_IMGURL() + "/%s.jpg";
+    }
+    public static void displayImageByGoodsId(Context context, ImageView iv, String goodsId) {
+        if (!isValidContextForGlide(context)) {
+            return;
+        }
+        String url = String.format(getImgWithSuffix(), goodsId);
+        RequestOptions options = RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.image_placehold)
+                .error(R.drawable.image_placehold);
+        Glide.with(context)
+                .load(url)
+                .apply(options)
+                .into(iv);
+
+    }
+//    public static void displayImageByGoodsId(Context context, ImageView iv, String goodsId) {
+//        if (!isValidContextForGlide(context)) {
+//            return;
+//        }
+//        String url = String.format(getImgWithSuffix(), goodsId);
+//        RequestOptions options = RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
+//                .placeholder(R.drawable.image_placehold)
+//                .error(R.drawable.image_placehold);
+//        Glide.with(context)
+//                .load(url)
+//                .apply(options)
+//                .into(iv);
+//
+//    }
 
 
     public static boolean isValidContextForGlide(final Context context) {

@@ -34,7 +34,7 @@ class DialogMsgUtils(mContext: Context) {
     @SuppressLint("ResourceAsColor")
     fun showDilaog(viewLayout: View) {
         val value: Activity = mContext as Activity
-        var builder = AlertDialog.Builder(mContext, R.style.YN_MyDilog)
+        var builder = AlertDialog.Builder(mContext, R.style.MyDilog)
         builder!!.setView(viewLayout)
         dialog = builder!!.create()
         dialog!!.setCancelable(false)
@@ -49,7 +49,7 @@ class DialogMsgUtils(mContext: Context) {
     @SuppressLint("ResourceAsColor")
     fun showDilaog(viewLayout: View,Gravity:Int) {
         val value: Activity = mContext as Activity
-        var builder = AlertDialog.Builder(mContext, R.style.YN_MyDilog)
+        var builder = AlertDialog.Builder(mContext, R.style.MyDilog)
         builder!!.setView(viewLayout)
         dialog = builder!!.create()
         dialog!!.getWindow()!!.setGravity(Gravity)

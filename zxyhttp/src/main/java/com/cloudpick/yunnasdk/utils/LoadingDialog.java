@@ -45,7 +45,7 @@ public class LoadingDialog implements DialogInterface.OnDismissListener {
         if (mContext == null || isShowing()) {
             return;
         }
-        View view = LayoutInflater.from(mContext).inflate(R.layout.yn_dialog_loading, null);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.dialog_loading, null);
         initView(view);
     }
 
@@ -56,7 +56,7 @@ public class LoadingDialog implements DialogInterface.OnDismissListener {
         if (mContext == null || isShowing()) {
             return;
         }
-        View view = LayoutInflater.from(mContext).inflate(R.layout.yn_dialog_loading, null);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.dialog_loading, null);
         TextView tv_state = (TextView) view.findViewById(R.id.tv_state);
         tv_state.setText(msg);
         initView(view);
@@ -115,7 +115,7 @@ public class LoadingDialog implements DialogInterface.OnDismissListener {
         if (mContext == null) {
             return;
         }
-        View view = LayoutInflater.from(mContext).inflate(R.layout.yn_dialog_loading, null);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.dialog_loading, null);
         dialog = new Dialog(mContext, R.style.loadingdialog);
         dialog.setContentView(view);
         dialog.setCancelable(isCancelable);

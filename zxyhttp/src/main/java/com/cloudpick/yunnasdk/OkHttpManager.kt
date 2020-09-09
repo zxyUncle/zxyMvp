@@ -1,31 +1,27 @@
 package com.cloudpick.yunnasdk
 
 import android.app.Activity
+import android.content.Context
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.widget.Toast
+import com.google.gson.Gson
 import com.cloudpick.httpnet.utils.NetWorkUtils
 import com.cloudpick.yunnasdk.tools.LoadTools
 import com.cloudpick.yunnasdk.tools.LogcatUitls
-import com.cloudpick.yunnasdk.utils.LoadingDialog
-import com.cloudpick.yunnasdk.utils.NetworkChangeReceiver
-import com.cloudpick.yunnasdk.utils.SSLSocketClient
-import com.google.gson.Gson
+import com.cloudpick.yunnasdk.utils.*
 import com.trello.rxlifecycle2.components.support.RxFragmentActivity
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import okhttp3.Response
-import okio.Buffer
-import okio.BufferedSink
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.nio.charset.Charset
 import java.util.concurrent.TimeUnit
+import okhttp3.*
+import okio.Buffer
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import java.nio.charset.Charset
 
 
 /**
@@ -68,7 +64,7 @@ open class OkHttpManager {
                     var requestBody = request.body()
                     var body: String = ""
                     val buffer = Buffer()
-                    requestBody?.writeTo(buffer as BufferedSink)
+                    requestBody?.writeTo(buffer)
                     var charset: Charset? = Charset.forName("UTF-8")
                     val contentType = requestBody?.contentType()
                     contentType?.let {
@@ -78,7 +74,7 @@ open class OkHttpManager {
                     LogcatUitls.printPost(NetConfigUtils.YN_TAG, request.url().toString(), body)
 //                Log.d(TAG,"发送请求: method：" + request.method()+ "\nurl：" + request.url()+ "\n请求头：" + request.headers()+ "\n请求参数: " + body)
                 } else {
-                    LogcatUitls.printGet(NetConfigUtils.YN_TAG, request.url().toString())
+                    LogcatUitls.printStirng(NetConfigUtils.YN_TAG, request.url().toString())
                 }
             return chain.proceed(request)
         }
@@ -92,11 +88,12 @@ open class OkHttpManager {
 //        val fileDir = File(Environment.getExternalStorageDirectory(), "cache")
         val fileSize = (10 * 1024 * 1024).toLong()
         val clien = OkHttpClient.Builder()
+                //自定义拦截器用于日志输出
                 .addNetworkInterceptor { chain ->
                     val request = chain.request()
                             .newBuilder()
                             .addHeader("Content-Type", "application/json")
-                            .addHeader("token",token)
+                            .addHeader("token", token)
                             .build()
                     chain.proceed(request)
                 }
@@ -124,7 +121,7 @@ open class OkHttpManager {
     }
 
     //可用于多种不同种类的请求
-    fun apiService(mContext: Activity?): HttpMode {
+    fun apiService(mContext: Context?): HttpMode {
         this.mContext = (mContext as Activity)!!
 //        networkChangeReceiver()//网路广播监听,弹出Dilaog去设置网路
         return getService(NetConfigUtils.YN_HOSTURL, HttpMode::class.java)
@@ -149,7 +146,7 @@ open class OkHttpManager {
      * @param observable Observable<T>
      * @param httpClickLenerlist HttpClickLenerlist<T>
      */
-    fun <T : Any> CallObserDialog(observable: Observable<T>, httpClickLenerlist: HttpClickLenerlist<T>, isShowLoad: Boolean = false) {
+    fun <T : Any> CallObserDialog(observable: Observable<T>, httpClickLenerlist: HttpClickLenerlist<T>, isShowLoad: Boolean = true) {
         if (!NetWorkUtils.isNetAvailable(mContext)) {
             Toast.makeText(mContext, mContext.resources.getString(R.string.include_network_no), Toast.LENGTH_SHORT).show()
             LoadTools.instance().hideMultistage()
@@ -160,7 +157,6 @@ open class OkHttpManager {
             httpClickLenerlist.onNoNetwork()
         } else {
             if (mContext !is RxFragmentActivity) {
-                LoadTools.instance().hideMultistage()
                 LogcatUitls.printStirng(NetConfigUtils.YN_TAG,mContext.resources.getString(R.string.yn_extends))
             } else {
                 if (isShowLoad) LoadTools.instance().show(mContext)
@@ -183,7 +179,6 @@ open class OkHttpManager {
                                 }
                             }
                         }, {
-                            if (isShowLoad) LoadTools.instance().hide()
                             LogcatUitls.printStirng(NetConfigUtils.YN_TAG, it.toString())
                         }, {
                             if (isShowLoad) LoadTools.instance().hide()

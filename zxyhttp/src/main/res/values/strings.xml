@@ -22,7 +22,7 @@
     <string name="yn_noclick">未设置点击事件</string>
     <string name="yn_loading">加载中...</string>
     <string name="yn_init_error">YN未初始化或没有访问权限</string>
-    <string name="yn_extends">当前Activity必须继承RxFragmentActivity</string>
+    <string name="yn_extends">当前Activity必须继承FragmentActivity</string>
 
 
 

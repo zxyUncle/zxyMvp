@@ -14,6 +14,7 @@ import com.cloudpick.yunnasdk.YN
  */
 fun ImageView.loadUrl(img: String="") {
     if(YN.mContext!=null) {
-        Glide.with(YN.mContext!!).load(NetConfigUtils.YN_IMGURL + img).into(this)
+        Glide.with(YN.mContext!!).load(NetConfigUtils.YN_IMGURL + img).placeholder(
+                R.drawable.image_placehold).into(this)
     }
 }

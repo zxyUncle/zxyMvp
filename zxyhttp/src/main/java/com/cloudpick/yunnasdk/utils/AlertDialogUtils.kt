@@ -90,14 +90,14 @@ class AlertDialogUtils private constructor() {
          * 创建AlertDialog
          */
         fun create(alertDialogUtilsListener: AlertDialogUtilsListener? = null): AlertDialogUtils {
-            alertDialogUtils.alertDilaogBuilder = AlertDialog.Builder(mContext, R.style.YN_MyDilog)
+            alertDialogUtils.alertDilaogBuilder = AlertDialog.Builder(mContext, R.style.MyDilog)
             alertDialogUtils.alertDilaogBuilder.setView(alertDialogUtils.layoutView)
             alertDialogUtils.dialog = alertDialogUtils.alertDilaogBuilder.create()
             alertDialogUtils.dialog.setCancelable(alertDialogUtils.cancelable)
             //设置动画
             var window = alertDialogUtils.dialog.window
             var layoutParams = window?.attributes
-            layoutParams?.windowAnimations = R.style.YN_AlertDialogAnimation
+            layoutParams?.windowAnimations = R.style.AlertDialogAnimation
             window?.attributes = layoutParams
 
             alertDialogUtils.dialog.show()

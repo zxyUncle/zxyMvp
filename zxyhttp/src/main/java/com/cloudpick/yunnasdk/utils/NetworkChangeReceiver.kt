@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.provider.Settings
 import com.cloudpick.yunnasdk.R
-import kotlinx.android.synthetic.main.yn_dialog_network.view.*
+import kotlinx.android.synthetic.main.dialog_network.view.*
 
 
 /**
@@ -40,7 +40,7 @@ class NetworkChangeReceiver : BroadcastReceiver() {
      */
     fun showPopwindow(){
         //弹出popwindow对话框
-        var viewLayout = LayoutInflater.from(mContext).inflate(R.layout.yn_dialog_network, null)
+        var viewLayout = LayoutInflater.from(mContext).inflate(R.layout.dialog_network, null)
         popwindowUtils = PopwindowTopUtils(mContext!!)
         popwindowUtils!!.showPop(viewLayout, viewLayout)
         viewLayout.dialog_network_setting.setOnClickListener(object : View.OnClickListener {

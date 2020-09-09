@@ -50,7 +50,7 @@ class PopwindowUtils {
                     PopupWindow(v, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             popupWindow!!.isTouchable = true
             popupWindow!!.isFocusable = true
-            popupWindow!!.animationStyle = R.style.YN_popwin_anim_style_bottom;
+            popupWindow!!.animationStyle = R.style.popwin_anim_style_bottom;
             popupWindow!!.isOutsideTouchable = true
             popupWindow!!.showAsDropDown(v, 0, 0, Gravity.CENTER)
 //            popupWindow!!.showAtLocation(view, Gravity.BOTTOM, 0, 0)

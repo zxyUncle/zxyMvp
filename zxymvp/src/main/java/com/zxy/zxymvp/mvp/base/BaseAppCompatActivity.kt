@@ -18,7 +18,10 @@ import kotlinx.android.synthetic.main.titlebar.*
  */
 open abstract class BaseAppCompatActivity : RxFragmentActivity() {
     abstract var layoutId: Int //初始化布局
-    abstract fun initView(savedInstanceState: Bundle?)//初始化数据
+    open protected fun initView(savedInstanceState: Bundle?) {}//初始化控件
+    open protected fun initData() {}//初始化数据
+    open protected fun initListener() {
+    }//初始化数据
 
     val llTitleLeft: LinearLayout by lazy {
         //返回按钮
@@ -43,6 +46,8 @@ open abstract class BaseAppCompatActivity : RxFragmentActivity() {
         setContentView(layoutId)
 //        EventBusUtil.register(this)
         initView(savedInstanceState)//初始化数据
+        initListener()//初始化监听
+        initData()//初始化数据
     }
 
     /**
@@ -65,6 +70,9 @@ open abstract class BaseAppCompatActivity : RxFragmentActivity() {
         if (hasToolBar()) {
             super.setContentView(R.layout.titlebar)
             LayoutInflater.from(this).inflate(layoutResID, container, true)
+            llTitleLeft.setOnClickListener {
+                finish()
+            }
         } else {
             super.setContentView(layoutResID)
         }

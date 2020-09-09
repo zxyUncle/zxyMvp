@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import com.cloudpick.yunnasdk.R
+import com.cloudpick.yunnasdk.YNClient
+import com.cloudpick.yunnasdk.entity.BaseBean
 import com.cloudpick.yunnasdk.utils.AlertDialogUtils
 
 /**
@@ -17,11 +19,11 @@ class ShowDialogTools {
     companion object {
         private lateinit var alertDialogUtils: AlertDialogUtils
 
-        fun showSMS(captchaUrl: String, mContext: Context, map: Map<String, Any>) {
+        fun showSMS(captchaUrl: String, mContext: Context, map: Map<String, Any>, onResponceListener: YNClient.OnResponceListener<BaseBean>) {
             alertDialogUtils = AlertDialogUtils.build(mContext)
                     .setCancelable(true)                //可选 设置是否可以取消，默认true
                     .setTransparency(0.3f)                //可选 设置窗口透明度，默认0.5
-                    .setView(R.layout.yn_dialog_sms_veri_code)
+                    .setView(R.layout.dialog_sms_veri_code)
                     .setOnClick(R.id.btn_ok)
                     .create(object : AlertDialogUtils.Builder.AlertDialogUtilsListener {
                         override fun onClickDialog(view: View) {
