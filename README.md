@@ -1,18 +1,6 @@
 # Kotlin+MVP+Okhttp+Retrifit+Rxjava+lifecy+多语言
 1、快速加入      
 -----
-[![](https://jitpack.io/v/zxyUncle/zxyMvp.svg)](https://jitpack.io/#zxyUncle/zxyMvp)
-Gradle
------
-Step 1
-
-
-     allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
       
 Module:                 
  1. zxyhttp:网路module           
