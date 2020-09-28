@@ -79,7 +79,7 @@ open abstract class BaseAppCompatActivity : RxFragmentActivity() {
     }
 
     /**
-     * 是否使用base的toolbar
+     * 是否使用Base的toolbar,fase表示使用自己自定义，不使用自带的
      */
     protected open fun hasToolBar() = true
 

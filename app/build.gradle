@@ -23,8 +23,8 @@ android {
         }
     }
 
-    //构建变种版本
-     flavorDimensions "zxymvp"
+    //构建变种版本-可以不用谢
+    flavorDimensions "zxymvp"
     productFlavors {
         n1_normal {
             buildConfigField("String", "hostUrl", '"http://10.10.10.223/"')
@@ -52,6 +52,16 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //今日头条适配
+    implementation 'me.jessyan:autosize:1.2.1'
+    //状态栏-http://www.androidcup.com/index.php/2019/09/06/immersionbar/
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    //刷新控件SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'
+    //BaseRecyclerView
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.38'
     implementation project(path: ':zxymultilingual')
     implementation project(path: ':zxymvp')
     implementation project(path: ':zxyhttp')

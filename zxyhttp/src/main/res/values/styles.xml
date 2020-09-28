@@ -9,20 +9,5 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:backgroundDimEnabled">false</item>
     </style>
-    <!--自定义万能布局Dialog 背景透明-->
-    <style name="MyDilog" parent="Theme.AppCompat.Dialog">
-        <!--设置window的窗口背景为透明-->
-        <item name="android:windowBackground">@android:color/transparent</item>
-    </style>
 
-    <style name="AlertDialogAnimation">
-        <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
-        <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
-    </style>
-
-
-    <style name="popwin_anim_style_bottom" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/pop_enter_anim_bottom</item>
-        <item name="android:windowExitAnimation">@anim/pop_exit_anim_bottom</item>
-    </style>
 </resources>
