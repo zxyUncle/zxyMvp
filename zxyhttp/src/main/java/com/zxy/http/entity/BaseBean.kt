@@ -1,4 +1,4 @@
-package com.cloudpick.yunnasdk.entity
+package com.zxy.http.entity
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

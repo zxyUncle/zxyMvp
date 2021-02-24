@@ -1,4 +1,4 @@
-package com.cloudpick.yunnasdk.utils
+package com.zxy.http.utils
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -7,7 +7,7 @@ import android.net.ConnectivityManager
 import android.view.LayoutInflater
 import android.view.View
 import android.provider.Settings
-import com.cloudpick.yunnasdk.R
+import com.zxy.http.R
 import kotlinx.android.synthetic.main.dialog_network.view.*
 
 

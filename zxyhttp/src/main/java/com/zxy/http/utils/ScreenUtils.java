@@ -1,4 +1,4 @@
-package com.cloudpick.yunnasdk.utils;
+package com.zxy.http.utils;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,5 +1,6 @@
 package com.zxy.http
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.IntentFilter
@@ -146,6 +147,7 @@ open class OkHttpManager {
      * @param observable Observable<T>
      * @param httpClickLenerlist HttpClickLenerlist<T>
      */
+    @SuppressLint("CheckResult")
     fun <T : Any> CallObserDialog(observable: Observable<T>, httpClickLenerlist: HttpClickLenerlist<T>, isShowLoad: Boolean = true) {
         if (!NetWorkUtils.isNetAvailable(mContext)) {
             Toast.makeText(mContext, mContext.resources.getString(R.string.include_network_no), Toast.LENGTH_SHORT).show()
