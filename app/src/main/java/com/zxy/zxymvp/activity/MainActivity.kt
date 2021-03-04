@@ -20,8 +20,10 @@ class MainActivity : BaseMvpActivity<MainPresenter>() {
     override fun initView(savedInstanceState: Bundle?) {
         //获取网路的点击事件
         tvMainGet.setOnClickListener {
-            presenter.loginCode(HashMap())
+            presenter.loginCode()
         }
+
+        
         //返回按钮点击事件
         llTitleLeft.setOnClickListener {
             Toast.makeText(this, "返回", Toast.LENGTH_SHORT).show()

@@ -18,16 +18,7 @@ class MainPresenter : BasePresenter<MainActivity> {
         okHttpApi = OkHttpService.INSTANCE.apiService(view)
     }
 
-    /**
-     * @see 1.3、用户登录
-     * @param mobile    手机号
-     * @param smsCode   验证码
-     * @param system    app默认传：mer
-     * @param region    区号：+86
-     * @param channel   渠道
-     * @return {"code":0}
-     */
-    fun loginCode(map: Map<String, Any>) {
+    fun loginCode() {
         OkHttpService.INSTANCE.callBack(okHttpApi.getWXArticle(), {
 
         }, {
