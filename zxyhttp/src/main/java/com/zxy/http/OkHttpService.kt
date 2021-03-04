@@ -77,8 +77,8 @@ open class OkHttpService {
     @SuppressLint("CheckResult")
     open fun <T> callBack(
         observable: Observable<BaseBean<T>>,
-        onSucc:BaseBean<T>.() -> Unit,
-        onFail: BaseBean<T>.() -> Unit,
+        onSucc:(BaseBean<T>.() -> Unit) = {},
+        onFail: (BaseBean<T>.() -> Unit) = {},
         onNetWorkError: (Throwable?.() -> Unit) = {}
     ) {
         if (!NetWorkUtils.isNetAvailable(mContext)) {

@@ -2,6 +2,7 @@ package com.zxy.zxymvp.mvp.base
 
 import android.content.res.Configuration
 import android.os.Bundle
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 import com.zxy.http.OkHttpApi
 import com.zxy.http.OkHttpService
 import com.zxy.zxymvp.mvp.IMvpView
@@ -18,7 +19,9 @@ abstract class BasePresenter<out V: IMvpView<BasePresenter<V>>>: IPresenter<V> {
     override lateinit var view:@UnsafeVariance V
 
     lateinit var okHttpApi: OkHttpApi
-    override fun onCreate(savedInstanceState: Bundle?)=Unit
+    override fun onCreate(savedInstanceState: Bundle?){
+        okHttpApi = OkHttpService.INSTANCE.apiService(view as RxAppCompatActivity)
+    }
     override fun onSaveInstanceState(outState: Bundle) = Unit
     override fun onViewStateRestored(savedInstanceState: Bundle?) = Unit
     override fun onConfigurationChanged(newConfig: Configuration) = Unit

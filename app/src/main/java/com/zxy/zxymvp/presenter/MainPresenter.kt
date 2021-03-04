@@ -1,9 +1,6 @@
 package com.zxy.zxymvp.presenter
 
-import com.zxy.http.OkHttpApi
 import com.zxy.http.OkHttpService
-import com.zxy.http.entity.LoginInfoBean
-import com.zxy.http.tools.JsonUtil
 import com.zxy.zxymvp.activity.MainActivity
 import com.zxy.zxymvp.mvp.base.BasePresenter
 
@@ -13,18 +10,15 @@ import com.zxy.zxymvp.mvp.base.BasePresenter
  * * M层
  * ******************************************
  */
-class MainPresenter : BasePresenter<MainActivity> {
-    constructor() {
-        okHttpApi = OkHttpService.INSTANCE.apiService(view)
-    }
+class MainPresenter : BasePresenter<MainActivity>() {
 
     fun loginCode() {
         OkHttpService.INSTANCE.callBack(okHttpApi.getWXArticle(), {
-
+            //todo 成功过-可省略
         }, {
-
+            //todo 失败-可省略
         }, {
-
+            //todo 网路错误-可省略
         })
     }
 

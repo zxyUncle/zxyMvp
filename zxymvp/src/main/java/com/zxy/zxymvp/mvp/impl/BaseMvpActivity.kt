@@ -29,7 +29,6 @@ abstract class BaseMvpActivity<out P : BasePresenter<BaseMvpActivity<P>>> : Base
 
 
     private fun createPresenter(): P {
-
         sequence {
             var thisClass: KClass<*> = this@BaseMvpActivity::class
             while (true) {

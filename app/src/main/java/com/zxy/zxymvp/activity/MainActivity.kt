@@ -23,7 +23,7 @@ class MainActivity : BaseMvpActivity<MainPresenter>() {
             presenter.loginCode()
         }
 
-        
+
         //返回按钮点击事件
         llTitleLeft.setOnClickListener {
             Toast.makeText(this, "返回", Toast.LENGTH_SHORT).show()
