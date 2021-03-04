@@ -1,6 +1,7 @@
 package com.zxy.zxymvp.presenter
 
-import com.zxy.http.OkHttpManager
+import com.zxy.http.OkHttpApi
+import com.zxy.http.OkHttpService
 import com.zxy.http.entity.LoginInfoBean
 import com.zxy.http.tools.JsonUtil
 import com.zxy.zxymvp.activity.MainActivity
@@ -12,7 +13,11 @@ import com.zxy.zxymvp.mvp.base.BasePresenter
  * * M层
  * ******************************************
  */
-class MainPresenter : BasePresenter<MainActivity>() {
+class MainPresenter : BasePresenter<MainActivity> {
+    constructor() {
+        okHttpApi = OkHttpService.INSTANCE.apiService(view)
+    }
+
     /**
      * @see 1.3、用户登录
      * @param mobile    手机号
@@ -23,22 +28,13 @@ class MainPresenter : BasePresenter<MainActivity>() {
      * @return {"code":0}
      */
     fun loginCode(map: Map<String, Any>) {
-        val observable = OkHttpManager.instance.apiService(view)
-            .loginCode(JsonUtil.bodyMap(map))
-        OkHttpManager.instance.CallObserDialog(
-            observable,
-            object : OkHttpManager.HttpClickLenerlist<LoginInfoBean> {
-                override fun onSucc(obj: LoginInfoBean) {
-                    view.bindContent(obj)
-                }
+        OkHttpService.INSTANCE.callBack(okHttpApi.getWXArticle(), {
 
-                override fun onFail(obj: LoginInfoBean) {
-                    view.bindContent(obj)
-                }
+        }, {
 
-                override fun onNoNetwork() {}
+        }, {
 
-            })
+        })
     }
 
 

@@ -2,6 +2,8 @@ package com.zxy.zxymvp.mvp.base
 
 import android.content.res.Configuration
 import android.os.Bundle
+import com.zxy.http.OkHttpApi
+import com.zxy.http.OkHttpService
 import com.zxy.zxymvp.mvp.IMvpView
 import com.zxy.zxymvp.mvp.IPresenter
 
@@ -15,7 +17,8 @@ abstract class BasePresenter<out V: IMvpView<BasePresenter<V>>>: IPresenter<V> {
 
     override lateinit var view:@UnsafeVariance V
 
-    override fun onCreate(savedInstanceState: Bundle?) = Unit
+    lateinit var okHttpApi: OkHttpApi
+    override fun onCreate(savedInstanceState: Bundle?)=Unit
     override fun onSaveInstanceState(outState: Bundle) = Unit
     override fun onViewStateRestored(savedInstanceState: Bundle?) = Unit
     override fun onConfigurationChanged(newConfig: Configuration) = Unit

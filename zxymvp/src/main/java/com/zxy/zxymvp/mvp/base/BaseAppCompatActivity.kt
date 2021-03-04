@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 import com.trello.rxlifecycle2.components.support.RxFragmentActivity
+import com.zxy.http.OkHttpApi
+import com.zxy.http.OkHttpService
 import com.zxy.zxymultilingual.MultiLanguageUtil
 import com.zxy.zxymvp.R
 import kotlinx.android.synthetic.main.titlebar.*
@@ -16,7 +19,7 @@ import kotlinx.android.synthetic.main.titlebar.*
  * *
  * ******************************************
  */
-open abstract class BaseAppCompatActivity : RxFragmentActivity() {
+open abstract class BaseAppCompatActivity : RxAppCompatActivity() {
     abstract var layoutId: Int //初始化布局
     open protected fun initView(savedInstanceState: Bundle?) {}//初始化控件
     open protected fun initData() {}//初始化数据
@@ -40,6 +43,7 @@ open abstract class BaseAppCompatActivity : RxFragmentActivity() {
     val llTitleRightTv: LinearLayout by lazy {
         findViewById<LinearLayout>(R.id.llTitleRightTv)
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

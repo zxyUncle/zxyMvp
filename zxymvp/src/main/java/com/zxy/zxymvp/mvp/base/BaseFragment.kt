@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.zxy.http.OkHttpApi
+import com.zxy.http.OkHttpService
 
 /**
  * Created by zxy on 2020/6/9 0009 18:06
@@ -19,7 +21,12 @@ open abstract class BaseFragment : Fragment() {
     protected abstract fun layoutId(): Int //传递布局R.layout.XX
     protected abstract fun initView(view: View, savedInstanceState: Bundle?)//初始化数据
     protected abstract fun loadData()//懒加载
+    lateinit var okHttpApi: OkHttpApi
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        okHttpApi = OkHttpService.instance.apiService(context)
+    }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return View.inflate(activity, layoutId(), null)
     }
